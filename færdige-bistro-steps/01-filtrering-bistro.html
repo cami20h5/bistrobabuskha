@@ -39,6 +39,8 @@
             margin-top: 5rem;
             font-size: 50px;
             background-color:peru;
+            
+            
         }
 
         #menu {
@@ -54,9 +56,13 @@
 
         }
 
-      
+        h2 {
+            padding-left: 5rem;
+            margin-top: 5rem;
+        }
 
 
+        
     
 
     </style>
@@ -162,7 +168,8 @@ const myHeaders = {
         retter.forEach(ret => {
         if(filter == ret.kategori || filter =="alle" ) { 
             const klon = template.cloneNode(true).content;
-            klon.querySelector(".billede").src = "billeder/" + ret.billedenavn;
+            const md = "-md.jpg"; 
+            klon.querySelector("img").src = "billeder/" + ret.billednavn + md;
             klon.querySelector(".navn").textContent = ret.navn;
             klon.querySelector(".kortbeskrivelse").textContent = ret.kortbeskrivelse;
             klon.querySelector(".pris").textContent = ret.pris;
